@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #131417;
+  --tertiary-color: #ffaa17;
+  --quaternary-color: #222429;
+  --light-gray: #cdcecf;
+  --dark-gray: #343a40;
+}
+
+body {
+  font-family: "Teko", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.header {
+  /* color: var(--secondary-color); */
+  color: #fff;
+  font-size: 1.3rem;
+  width: 100%;
+  position: fixed; /* Fix the header at the top */
+  top: 0;
+  z-index: 1000; /* Ensure the header stays above other content */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffaa17; /* Changed underline color to white */
+  left: 0;
+  bottom: 0;
+  transition: all 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+/****************************/
+/* HOME */
+/****************************/
+
+.home-container {
+  background-image: url("../src/Assets/background.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.4;
+}
+
+.hero-text {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 35%;
+  left: 28%;
+  line-height: 1;
+}
+
+.hero-text h1 {
+  font-size: 80px;
+  margin-bottom: 1rem;
+  z-index: 2000;
+}
+
+button {
+  width: 200px;
+  height: 70px;
+  border-radius: 0.2em;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #ffaa17;
+  /* box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff; */
+}
+
+button::before {
+  content: "";
+  width: 0;
+  height: 70px;
+  border-radius: 0.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to left, #343a40 0%, #131417 100%);
+  transform: skewX(-22deg);
+  transition: 0.4s ease;
+  display: block;
+  z-index: -1;
+}
+
+button:hover::before {
+  width: 200px;
+  color: #fff;
+}
+
+button:hover {
+  color: #fff;
+  opacity: 1;
+  right: 0;
+  transform: skewX(0deg);
+}
