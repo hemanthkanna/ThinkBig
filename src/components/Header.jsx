@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../App.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 const Header = () => {
   const navbarRef = useRef(null);
+  const [menuOpen, setmenuOpen] = useState(false);
 
   useEffect(() => {
     const header = navbarRef.current;
@@ -34,8 +35,13 @@ const Header = () => {
         <div className="logo-box">
           <img src="../../src/Assets/TSS.png" alt="logo" className="logo" />
         </div>
+        <div className="hamburger" onClick={() => setmenuOpen(!menuOpen)}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
         <div className="nav-links-box">
-          <ul className="nav-links">
+          <ul className={`${menuOpen ? "open" : ""} nav-links`}>
             <li>
               <a href="">HOME</a>
             </li>
@@ -54,9 +60,13 @@ const Header = () => {
           </ul>
         </div>
         <div className="emailus">
-          <span></span>
-          <p>EMAIL US</p>
-          <p>hr@thinkbigsoft.com</p>
+          {/* <span>
+            <img src="../../src/Assets/emailus.jpeg" />
+          </span> */}
+          <span>
+            <p className="e-text">EMAIL US</p>
+            <p>hr@thinkbigsoft.com</p>
+          </span>
         </div>
       </nav>
     </header>
