@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Header from "./Header";
 import Lenis from "lenis";
 import gsap from "gsap";
+import NumberCounts from "./NumberCount";
 const Home = () => {
   useEffect(() => {
     const lenis = new Lenis({
@@ -64,7 +65,9 @@ const Home = () => {
           <button> DISCOVER MORE !</button>
         </div>
       </section>
-      <section className="about"></section>
+      <section className="about">
+        <NumberCounts />
+      </section>
     </>
   );
 };

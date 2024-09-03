@@ -43,7 +43,7 @@ body {
   display: flex;
   justify-content: space-between; /* Adjust spacing for hamburger positioning */
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
 }
 
 .nav-links {
@@ -189,7 +189,7 @@ li {
 }
 
 .hero-text h1 {
-  font-size: 6vw;
+  font-size: clamp(2rem, 6vw, 6rem);
   margin-bottom: 1rem;
   z-index: 2000;
 }
@@ -244,10 +244,66 @@ button:hover {
   }
 }
 
-.about {
-  background-color: var(--primary-color);
-  padding: 2rem;
-  text-align: center;
-  width: 100%;
-  height: 600px;
+.number-counts {
+  display: flex;
+  gap: 20px; /* Space between the number counters */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows wrapping on smaller devices */
+}
+
+.number-count {
+  display: flex;
+  align-items: center; /* Centers items vertically */
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem;
+  border-right: 1px solid rgba(245, 222, 179, 0.2);
+}
+
+.number-count h1 {
+  margin: 0;
+  font-size: 4rem; /* Adjust as needed */
+}
+
+.number-count p {
+  margin: 0;
+  font-size: 1.5rem; /* Adjust as needed */
+}
+
+/* Media query for small devices */
+@media (max-width: 768px) {
+  .number-counts {
+    flex-direction: column; /* Stack number counters vertically */
+    gap: 10px; /* Reduce gap between items */
+  }
+
+  .number-count {
+    padding: 2rem;
+    border-right: none; /* Remove the right border on smaller screens */
+    border-bottom: 1px solid rgba(245, 222, 179, 0.2); /* Add a bottom border instead */
+  }
+
+  .number-count h1 {
+    font-size: 2.5rem; /* Decrease font size for smaller screens */
+  }
+
+  .number-count p {
+    font-size: 1.2rem; /* Decrease font size for smaller screens */
+  }
+}
+
+/* Media query for very small devices */
+@media (max-width: 480px) {
+  .number-count {
+    padding: 1.5rem; /* Reduce padding for very small devices */
+  }
+
+  .number-count h1 {
+    font-size: 2rem; /* Further decrease font size */
+  }
+
+  .number-count p {
+    font-size: 1rem; /* Further decrease font size */
+  }
 }
