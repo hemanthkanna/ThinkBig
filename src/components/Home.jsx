@@ -68,6 +68,57 @@ const Home = () => {
       <section className="about">
         <NumberCounts />
       </section>
+      <section className="services">
+        <div className="services-text">
+          <h1> SERVICES WE OFFER </h1>
+          <p>
+            Unlock the Power of Innovation with Our Tailored Solutions. <br />
+            Delivering Excellence in Every Aspect of Your Business.
+          </p>
+        </div>
+        <div className="services-cards">
+          <div className="card">
+            <img src="../../src/Assets/website development.png" alt="" />
+            <h2>Website Development</h2>
+            <p>
+              Crafting dynamic, responsive websites that drive business growth
+              and digital presence
+            </p>
+          </div>
+          <div className="card">
+            <img src="../../src/Assets/Mobile App Development.png" alt="" />
+            <h2>Mobile App Development</h2>
+            <p>
+              Building intuitive, high-performance mobile apps to engage users
+              and elevate your brand.
+            </p>
+          </div>
+          <div className="card">
+            <img src="../../src/Assets/UI_UX Design.png" alt="" />
+            <h2>UI/UX Design</h2>
+            <p>
+              Designing user-centric interfaces that blend aesthetics with
+              seamless functionality for an exceptional digital experience
+            </p>
+          </div>
+          <div className="card">
+            <img src="../../src/Assets/SAP Projects.png" alt="" />
+            <h2>SAP Projects</h2>
+            <p>
+              Implementing robust SAP solutions that optimize business processes
+              and enhance operational efficiency
+            </p>
+          </div>
+          <div className="card">
+            <img src="../../src/Assets/Digital Marketing Services.png" alt="" />
+            <h2>Digital Marketing Services</h2>
+            <p>
+              Driving targeted growth and brand visibility through innovative,
+              data-driven digital marketing strategies.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

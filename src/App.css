@@ -307,3 +307,98 @@ button:hover {
     font-size: 1rem; /* Further decrease font size */
   }
 }
+
+.services {
+  background-color: var(--primary-color);
+  color: var(--dark-gray);
+  padding: 4rem 0;
+}
+
+.services-text {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(59, 54, 47, 0.247);
+  padding: 3rem 0.5rem;
+}
+
+.services-text h1 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  transform: scaleY(1.5) scaleX(1.2); /* Vertically stretches the text */
+  display: inline-block;
+  font-weight: 500;
+}
+
+.services-text p {
+  font-size: 1.5rem;
+  transform: scaleY(0.8) scaleX(1.2); /* Vertically stretches the text */
+  display: inline-block;
+  font-weight: 300;
+}
+
+.services-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: 30px; /* Increased spacing between cards */
+  justify-content: center; /* Centers cards horizontally */
+  padding: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 250px; /* Increased maximum width for each card */
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px; /* Adds padding inside the card */
+}
+
+.card img {
+  width: 5rem;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 15px; /* Adds spacing below the image */
+}
+
+.card h2 {
+  font-size: 22px; /* Increased font size for the title */
+  margin: 15px 0;
+}
+
+.card p {
+  font-size: 16px; /* Increased font size for the paragraph */
+  color: #555;
+  padding: 0 10px 20px;
+}
+
+.card:hover {
+  transform: translateY(
+    -7px
+  ); /* Adds a hover effect with more visible movement */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .card {
+    flex: 1 1 calc(33.33% - 60px); /* Adjusts spacing and size for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    flex: 1 1 calc(50% - 30px); /* Adjusts for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%; /* Stacks cards on small screens */
+  }
+}
