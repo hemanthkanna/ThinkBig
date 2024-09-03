@@ -316,8 +316,10 @@ button:hover {
 
 .services-text {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  text-overflow: hidden;
   gap: 10px;
   border-bottom: 1px solid rgba(59, 54, 47, 0.247);
   padding: 3rem 0.5rem;
@@ -352,27 +354,27 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 250px; /* Increased maximum width for each card */
+  max-width: 450px; /* Increased maximum width for each card */
   text-align: center;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 20px; /* Adds padding inside the card */
+  padding: 50px; /* Adds padding inside the card */
 }
 
 .card img {
-  width: 5rem;
+  width: 6rem;
   height: auto;
   object-fit: cover;
   margin-bottom: 15px; /* Adds spacing below the image */
 }
 
 .card h2 {
-  font-size: 22px; /* Increased font size for the title */
+  font-size: 25px; /* Increased font size for the title */
   margin: 15px 0;
 }
 
 .card p {
-  font-size: 16px; /* Increased font size for the paragraph */
+  font-size: 20px; /* Increased font size for the paragraph */
   color: #555;
   padding: 0 10px 20px;
 }
@@ -386,18 +388,45 @@ button:hover {
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
+  .services-text {
+    flex-direction: column; /* Stacks text vertically */
+    gap: 20px; /* Reduces gap between items */
+    font-size: 1rem;
+  }
+
+  .services-text p {
+    font-size: 1.5rem; /* Decreases font size for larger screens */
+  }
+
   .card {
     flex: 1 1 calc(33.33% - 60px); /* Adjusts spacing and size for larger screens */
   }
 }
 
 @media (max-width: 767px) {
+  .services-text {
+    flex-direction: column; /* Stacks text vertically */
+    gap: 20px; /* Reduces gap between items */
+    font-size: 1rem;
+  }
+
+  .services-text p {
+    font-size: 1.2rem; /* Decreases font size for larger screens */
+  }
   .card {
     flex: 1 1 calc(50% - 30px); /* Adjusts for medium screens */
   }
 }
 
 @media (max-width: 480px) {
+  .services-text {
+    flex-direction: column; /* Stacks text vertically */
+    gap: 20px; /* Reduces gap between items */
+  }
+
+  .services-text p {
+    font-size: 1.2rem; /* Decreases font size for larger screens */
+  }
   .card {
     flex: 1 1 100%; /* Stacks cards on small screens */
   }
