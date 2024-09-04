@@ -244,6 +244,10 @@ button:hover {
   }
 }
 
+/***************************************************/
+/* Number Counter */
+/***************************************************/
+
 .number-counts {
   display: flex;
   gap: 20px; /* Space between the number counters */
@@ -308,43 +312,51 @@ button:hover {
   }
 }
 
-.services {
+/**************************************************************/
+/* Service Section*/
+/**************************************************************/
+
+.services,
+.our-projects {
   background-color: var(--primary-color);
   color: var(--dark-gray);
   padding: 4rem 0;
 }
 
-.services-text {
+.services-text,
+.our-project-text {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  text-overflow: hidden;
-  gap: 10px;
+  gap: 10vw;
   border-bottom: 1px solid rgba(59, 54, 47, 0.247);
   padding: 3rem 0.5rem;
+  text-align: center; /* Centers text on smaller screens */
 }
 
-.services-text h1 {
+.services-text h1,
+.our-project-text h1 {
   font-size: 2.5rem;
   color: var(--secondary-color);
-  transform: scaleY(1.5) scaleX(1.2); /* Vertically stretches the text */
+  transform: scaleY(1.5) scaleX(1.2);
   display: inline-block;
   font-weight: 500;
 }
 
-.services-text p {
+.services-text p,
+.our-project-text > ul {
   font-size: 1.5rem;
-  transform: scaleY(0.8) scaleX(1.2); /* Vertically stretches the text */
+  transform: scaleY(0.8) scaleX(1.2);
   display: inline-block;
   font-weight: 300;
 }
 
 .services-cards {
   display: flex;
-  flex-wrap: wrap; /* Allows cards to wrap to the next line */
-  gap: 30px; /* Increased spacing between cards */
-  justify-content: center; /* Centers cards horizontally */
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
   padding: 30px;
 }
 
@@ -354,80 +366,305 @@ button:hover {
   border-radius: 12px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px; /* Increased maximum width for each card */
+  max-width: 450px;
   text-align: center;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 50px; /* Adds padding inside the card */
+  padding: 50px;
 }
 
 .card img {
   width: 6rem;
   height: auto;
   object-fit: cover;
-  margin-bottom: 15px; /* Adds spacing below the image */
+  margin-bottom: 15px;
 }
 
 .card h2 {
-  font-size: 25px; /* Increased font size for the title */
+  font-size: 25px;
   margin: 15px 0;
 }
 
 .card p {
-  font-size: 20px; /* Increased font size for the paragraph */
+  font-size: 20px;
   color: #555;
   padding: 0 10px 20px;
 }
 
 .card:hover {
-  transform: translateY(
-    -7px
-  ); /* Adds a hover effect with more visible movement */
+  transform: translateY(-7px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive adjustments */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+  .card {
+    flex: 1 1 calc(33.33% - 60px); /* Three cards per row on larger screens */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .services-text {
-    flex-direction: column; /* Stacks text vertically */
-    gap: 20px; /* Reduces gap between items */
-    font-size: 1rem;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .services-text p {
-    font-size: 1.5rem; /* Decreases font size for larger screens */
+    font-size: 1.5rem;
   }
 
   .card {
-    flex: 1 1 calc(33.33% - 60px); /* Adjusts spacing and size for larger screens */
+    flex: 1 1 calc(50% - 30px); /* Two cards per row on medium screens */
   }
 }
 
 @media (max-width: 767px) {
   .services-text {
-    flex-direction: column; /* Stacks text vertically */
-    gap: 20px; /* Reduces gap between items */
-    font-size: 1rem;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .services-text p {
-    font-size: 1.2rem; /* Decreases font size for larger screens */
+    font-size: 1.2rem;
   }
+
   .card {
-    flex: 1 1 calc(50% - 30px); /* Adjusts for medium screens */
+    flex: 1 1 calc(50% - 30px); /* Two cards per row on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .services-text {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .services-text p {
+    font-size: 1rem;
+  }
+
+  .card {
+    flex: 1 1 100%; /* One card per row on extra-small screens */
+  }
+}
+
+.our-project-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-overflow: hidden;
+  gap: 20px;
+  border-bottom: 1px solid rgba(59, 54, 47, 0.247);
+  padding: 3rem 0.5rem;
+}
+
+.our-project-text ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.our-project-text ul li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffaa17;
+  left: 0;
+  bottom: 0;
+  transition: all 0.4s ease;
+}
+
+.our-project-text ul li:hover::after {
+  width: 100%;
+}
+
+.our-projects-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Allows images to wrap to the next line */
+  gap: 30px; /* Increased spacing between images */
+  justify-content: center; /* Centers images horizontally */
+  padding: 30px;
+  width: 100%;
+  height: 600px;
+}
+
+/****************************************************************/
+/*Testimonials Section */
+/****************************************************************/
+
+.testimonial-card-box {
+  background-color: var(--primary-color);
+  color: var(--dark-gray);
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-author img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .our-project-text {
+    flex-direction: column; /* Stacks text vertically */
+    gap: 20px; /* Reduces gap between items */
+    font-size: 1rem;
+  }
+
+  .our-project-text ul {
+    font-size: 1.5rem; /* Decreases font size for larger screens */
+  }
+}
+
+@media (max-width: 767px) {
+  .our-project-text {
+    flex-direction: column; /* Stacks text vertically */
+    gap: 20px; /* Reduces gap between items */
+    font-size: 1rem;
+  }
+
+  .our-project-text ul {
+    font-size: 1.2rem; /* Decreases font size for larger screens */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-project-text {
     flex-direction: column; /* Stacks text vertically */
     gap: 20px; /* Reduces gap between items */
   }
 
-  .services-text p {
+  .our-project-text ul li {
     font-size: 1.2rem; /* Decreases font size for larger screens */
   }
-  .card {
-    flex: 1 1 100%; /* Stacks cards on small screens */
+}
+
+/****************************************************************/
+/* Content Section*/
+/****************************************************************/
+
+.content-section {
+  background-color: var(--secondary-color);
+  padding: 4em 2em; /* Adjusted padding for smaller screens */
+}
+
+.content-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Stack content vertically on smaller screens */
+  text-align: center; /* Center-align text on smaller screens */
+}
+
+.content-box h1 {
+  font-size: 2rem; /* Adjusted font size for smaller screens */
+  text-wrap: wrap;
+  text-overflow: hidden;
+  transform: scaleY(1.2) scaleX(0.9); /* Adjust scaling for better readability */
+}
+
+.content-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: 20px; /* Adjusted spacing between cards for smaller screens */
+  align-items: center;
+  justify-content: center; /* Center the cards on smaller screens */
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem; /* Adjusted padding for smaller screens */
+  border-right: none; /* Remove border on smaller screens */
+  gap: 20px; /* Adjusted spacing between elements inside the card */
+  flex: 1 1 calc(50% - 20px); /* Make cards take half the width minus the gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better appearance */
+}
+
+.content-card img {
+  width: 80px; /* Adjusted image size for smaller screens */
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px; /* Adjusted margin for smaller screens */
+}
+
+.content-card h2 {
+  font-size: 1.2rem; /* Adjusted font size for smaller screens */
+  margin-bottom: 8px; /* Adjusted margin for smaller screens */
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (min-width: 768px) {
+  .content-section {
+    padding: 6em 5em;
+  }
+
+  .content-box {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .content-box h1 {
+    font-size: 3rem;
+  }
+
+  .content-cards {
+    justify-content: start;
+  }
+
+  .content-card {
+    padding: 3rem;
+    flex: 1 1 calc(33.333% - 30px); /* Make cards take a third of the width minus the gap */
+  }
+
+  .content-card img {
+    width: 100px;
+  }
+
+  .content-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .content-section {
+    padding: 6em 10em;
+  }
+  .content-card {
+    flex: 1 1 calc(25% - 30px); /* Make cards take a quarter of the width minus the gap */
+    justify-content: center;
   }
 }

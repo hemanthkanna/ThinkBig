@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register the ScrollTrigger plugin
@@ -7,21 +7,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const NumberCount = ({ endValue, duration, label, icon }) => {
   const numberRef = useRef(null);
+  const [currentValue, setCurrentValue] = useState(0); // Use state to manage number display
 
   useEffect(() => {
     const element = numberRef.current;
 
     // Create the GSAP animation with ScrollTrigger
-    const animation = gsap.fromTo(
-      element,
-      { innerText: 0 },
+    const animation = gsap.to(
+      { value: 0 }, // Start value object
       {
-        innerText: endValue,
+        value: endValue, // End value
         duration: duration,
         ease: "power2.out",
-        snap: { innerText: 1 },
         onUpdate: function () {
-          element.innerText = Math.ceil(this.targets()[0].innerText);
+          setCurrentValue(Math.ceil(this.targets()[0].value)); // Update state with the animated value
         },
         scrollTrigger: {
           trigger: element,
@@ -42,7 +41,11 @@ const NumberCount = ({ endValue, duration, label, icon }) => {
 
   return (
     <div className="number-count">
-      <h1 ref={numberRef}>0{icon}</h1> <br />
+      <h1 ref={numberRef}>
+        {currentValue}
+        {icon}
+      </h1>
+      <br />
       <p>{label}</p>
     </div>
   );
