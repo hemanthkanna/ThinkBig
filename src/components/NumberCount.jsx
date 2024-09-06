@@ -82,4 +82,15 @@ const NumberCounts = () => {
   );
 };
 
-export default NumberCounts;
+const ProjectCount = () => {
+  return (
+    <NumberCount
+      endValue={75}
+      duration={5}
+      label="PROJECTS DELIVERED SO FAR"
+      icon={"+"}
+    />
+  );
+};
+
+export { NumberCounts, ProjectCount };

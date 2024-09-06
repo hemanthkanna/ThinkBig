@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Header from "./Header";
 import Lenis from "lenis";
 import gsap from "gsap";
-import NumberCounts from "./NumberCount";
+import { NumberCounts, ProjectCount } from "../components/NumberCount";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register the ScrollTrigger plugin
@@ -17,6 +17,8 @@ import digitalMarketing from "../Assets/Digital Marketing Services.png";
 import modernTech from "../Assets/Modern Tech.png";
 import brilliantSupport from "../Assets/Brilliant Support.png";
 import speedyExecution from "../Assets/Speedy Execution.png";
+import globe from "../Assets/17.png";
+import arrow from "../Assets/AIM.png";
 
 const Home = () => {
   useEffect(() => {
@@ -50,7 +52,7 @@ const Home = () => {
 
     // Button Animation
     gsap.fromTo(
-      "button",
+      ".hero-button",
       { scale: 1, opacity: 1 },
       {
         scale: 1.1,
@@ -100,18 +102,45 @@ const Home = () => {
           },
         }
       );
-
-      // Service Cards Hover Effect
-      // element.addEventListener("mouseover", () => {
-      //   gsap.to(element, {
-      //     color: "#fff",
-      //     backgroundColor: "rgba(59, 54, 47, 0.247)",
-      //   });
-      // });
     });
+
+    // Animation for .our-principle-text-box
+    gsap.fromTo(
+      ".our-principle-text-box",
+      { opacity: 0, x: "-100vw" },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: ".our-principle-text-box",
+          start: "top 60%",
+          end: "bottom 40%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    // Animation for .aim-box
+    gsap.fromTo(
+      ".aim-box",
+      { opacity: 0, x: "100vw" },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        scrollTrigger: {
+          trigger: ".aim-box",
+          start: "top 60%",
+          end: "bottom 40%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
 
     return () => {
       lenis.destroy(); // Proper cleanup of Lenis instance
+      ScrollTrigger.killAll(); // Kill all ScrollTriggers
     };
   }, []);
 
@@ -127,7 +156,7 @@ const Home = () => {
             <br />
             SHAPING THE FUTURE.
           </h1>
-          <button>DISCOVER MORE!</button>
+          <button className="hero-button">DISCOVER MORE!</button>
         </div>
       </section>
       <section className="about">
@@ -274,21 +303,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="testimonial-card">
-          <div className="testimonial-text">
-            <p>
-              "We've been using ThinkBig for over a year now and it's truly been
-              an incredible experience. Our team has worked tirelessly to
-              develop our digital presence and we're so grateful for their help
-              and support."
-            </p>
-            <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="" />
-              <h3>John Doe</h3>
-              <p>CEO, Company XYZ</p>
-            </div>
-          </div>
-        </div>
       </section>
       <section className="content-section">
         <div className="content-box">
@@ -306,6 +320,50 @@ const Home = () => {
           <div className="content-card">
             <img src={speedyExecution} alt="speedy execution" />
             <h2>speedy Execution</h2>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="our-principle-section">
+          <div className="our-principle-text-box">
+            <img
+              className="globe"
+              src={globe}
+              alt="Globe representing our global principles"
+            />
+            <div className="principle-text">
+              <h1>OUR PRINCIPLE</h1>
+              <p>
+                We operate with integrity, enthusiasm, dedication, and a strong
+                focus on our customers. Our actions are guided by unwavering
+                philosophies.
+              </p>
+            </div>
+          </div>
+          <div className="aim-box">
+            <img className="arrow" src={arrow} alt="Arrow indicating growth" />
+            <div className="aim-text-box">
+              <ProjectCount />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mid-banner-section">
+        <div className="banner-text-box banner-box-1">
+          <div className="inner-text">
+            <h3 className="banner-text">
+              Shape Tomorrow with Technology at Thinkbig Software Solutions Pvt
+              Ltd
+            </h3>
+            <button className="discover-button-1">Discover More</button>
+          </div>
+        </div>
+        <div className="banner-text-box  banner-box-2">
+          <div className="inner-text">
+            <h3 className="banner-text">
+              Advance with Technology and Thinkbig Software Solutions Pvt Ltd
+            </h3>
+            <button className="discover-button-2">Discover More</button>
           </div>
         </div>
       </section>

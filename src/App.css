@@ -1,5 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
 
+@font-face {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gfaJ9pRtB.woff2)
+    format("woff2");
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0,
+    U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gfa19pRtB.woff2)
+    format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Teko";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/teko/v20/LYjNdG7kmE0gfaN9pQ.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +50,7 @@
 }
 
 body {
-  font-family: "Teko", sans-serif;
+  font-family: "Teko";
   font-style: normal;
   font-weight: 400;
   color: var(--primary-color);
@@ -194,7 +228,7 @@ li {
   z-index: 2000;
 }
 
-button {
+.hero-button {
   width: 200px;
   height: 70px;
   border-radius: 0.2em;
@@ -208,8 +242,7 @@ button {
   background-color: #ffaa17;
   transition: background-color 0.4s ease;
 }
-
-button::before {
+.hero-button::before {
   content: "";
   width: 0;
   height: 70px;
@@ -224,12 +257,12 @@ button::before {
   z-index: -1;
 }
 
-button:hover::before {
+.hero-button:hover::before {
   width: 200px;
   color: #fff;
 }
 
-button:hover {
+.hero-button:hover {
   color: #fff;
   opacity: 1;
   right: 0;
@@ -666,5 +699,271 @@ button:hover {
   .content-card {
     flex: 1 1 calc(25% - 30px); /* Make cards take a quarter of the width minus the gap */
     justify-content: center;
+  }
+}
+
+/****************************************************************/
+/* OUR PRINCIPLES */
+/****************************************************************/
+.globe,
+.arrow {
+  width: 100%;
+  max-width: 15em;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.our-principle-section {
+  background-color: var(--primary-color);
+  color: var(--dark-gray);
+  padding: 4em 2em; /* Adjust padding for smaller screens */
+  display: flex;
+  flex-direction: row; /* Default to column layout */
+  align-items: center; /* Center-align items */
+  justify-content: space-around;
+  gap: 20px;
+  word-wrap: break-word; /* Ensure long words break and wrap */
+  overflow: hidden;
+}
+
+.our-principle-text-box,
+.aim-box {
+  flex: 1 1 auto; /* Allow items to grow and shrink */
+  text-align: center; /* Center-align text for smaller screens */
+  max-width: 600px; /* Limit width to improve readability */
+  overflow: hidden;
+}
+
+.principle-text {
+  text-align: center; /* Center-align text */
+  padding: 20px;
+  word-wrap: break-word; /* Ensure long words break and wrap */
+}
+
+.principle-text h1,
+.aim-text-box h1 {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  transform: scaleY(1.5) scaleX(1.2);
+  font-weight: 500;
+  margin: 0;
+}
+
+.principle-text p,
+.aim-text-box p {
+  font-size: 1.5rem;
+  transform: scaleY(1) scaleX(1.2);
+  font-weight: 300;
+  margin: 0;
+  word-wrap: break-word; /* Ensure text wraps properly */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .our-principle-section {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 2em 1em; /* Reduce padding */
+  }
+
+  .globe,
+  .arrow {
+    max-width: 10em; /* Reduce image size for smaller screens */
+  }
+
+  .principle-text h1,
+  .aim-text-box h1 {
+    font-size: 2rem; /* Smaller font size */
+  }
+
+  .principle-text p,
+  .aim-text-box p {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .globe,
+  .arrow {
+    max-width: 8em; /* Further reduce image size for extra small screens */
+  }
+
+  .principle-text h1,
+  .aim-text-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .principle-text p,
+  .aim-text-box p {
+    font-size: 1rem;
+  }
+}
+
+/********************************************************************/
+/*******************************************************************/
+
+.mid-banner-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.banner-box-1,
+.banner-box-2 {
+  position: relative; /* Allows the pseudo-element to be positioned correctly */
+  padding: 5em;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hides any overflow from the pseudo-element */
+}
+
+.banner-box-1::before,
+.banner-box-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1; /* Sits behind the content */
+}
+
+/* Specific styling for the first banner box */
+.banner-box-1::before {
+  background-color: var(--dark-gray);
+  background-image: url("./Assets/HOME_body_banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.4; /* Semi-transparent effect */
+}
+
+/* Specific styling for the second banner box */
+.banner-box-2::before {
+  background-color: rgba(255, 170, 23, 0.8);
+  opacity: 0.9; /* Semi-transparent effect */
+}
+
+/* Ensures the inner text and button stay above the overlay */
+.inner-text {
+  position: relative;
+  z-index: 2; /* Stays above the pseudo-element */
+  text-align: center;
+}
+
+/* Common styling for headings in both banner boxes */
+.banner-box-1 h3,
+.banner-box-2 h3 {
+  transform: scaleY(1.2) scaleX(1.3);
+  transition: transform 0.3s ease-in-out;
+  font-size: 2.5vw;
+  font-weight: 400;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Specific color for text in the first banner box */
+.banner-box-1 h3 {
+  color: var(--primary-color);
+}
+
+/* Specific color for text in the second banner box */
+.banner-box-2 h3 {
+  color: var(--secondary-color);
+}
+
+.discover-button-1,
+.discover-button-2 {
+  width: 200px;
+  height: 70px;
+  border-radius: 0.2em;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 20px auto;
+}
+
+.discover-button-1 {
+  background-color: #ffaa17;
+  transition: background-color 0.4s ease;
+}
+
+.discover-button-2 {
+  background-color: var(--quaternary-color);
+  transition: background-color 0.4s ease;
+  color: var(--primary-color);
+}
+
+.discover-button-1::before,
+.discover-button-2::before {
+  content: "";
+  width: 0;
+  height: 70px;
+  border-radius: 0.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: skewX(-22deg);
+  transition: 0.4s ease;
+  display: block;
+  z-index: -1;
+}
+
+.discover-button-1::before {
+  background-image: linear-gradient(to left, #343a40 0%, #131417 100%);
+}
+
+.discover-button-2::before {
+  background-image: linear-gradient(to right, #ffffff 0%, #fdfeff 100%);
+}
+
+.discover-button-1:hover::before {
+  width: 200px;
+  color: #fff;
+}
+
+.discover-button-2:hover::before {
+  width: 200px;
+  color: #000;
+}
+
+.discover-button-1:hover {
+  color: #fff;
+  opacity: 1;
+  right: 0;
+  transform: skewX(0deg);
+}
+
+.discover-button-2:hover {
+  color: #000;
+  opacity: 1;
+  right: 0;
+  transform: skewX(0deg);
+}
+
+@media screen and (max-width: 768px) {
+  .banner-box-1 h3,
+  .banner-box-2 h3 {
+    font-size: 1.3em;
+  }
+  .mid-banner-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .discover-button-1,
+  .discover-button-2 {
+    width: 150px;
+    height: 50px;
   }
 }
