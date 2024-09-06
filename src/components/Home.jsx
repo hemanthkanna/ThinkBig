@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Header from "./Header";
+import Footer from "./Footer";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { NumberCounts, ProjectCount } from "../components/NumberCount";
@@ -19,6 +20,7 @@ import brilliantSupport from "../Assets/Brilliant Support.png";
 import speedyExecution from "../Assets/Speedy Execution.png";
 import globe from "../Assets/17.png";
 import arrow from "../Assets/AIM.png";
+import leftCurve from "../Assets/left-curve-line.png";
 
 const Home = () => {
   useEffect(() => {
@@ -42,6 +44,22 @@ const Home = () => {
       repeat: -1,
       ease: "none",
     });
+
+    // Left Curve Animation
+    gsap.fromTo(
+      ".left-curve",
+      { y: "-100%", x: "-100%", opacity: 0 }, // Starts off-screen above and to the left
+      {
+        y: -300,
+        x: -340,
+        opacity: 1,
+        duration: 2,
+        repeat: -1,
+        repeatDelay: 5,
+        yoyo: true,
+        ease: "bounce.out", // Bounce effect for entry
+      }
+    );
 
     // Hero Text Animation
     gsap.fromTo(
@@ -151,6 +169,7 @@ const Home = () => {
         <div className="home-container"></div>
 
         <div className="hero-text">
+          <img src={leftCurve} className="left-curve" alt="" />
           <h1>
             MASTERING TECHNOLOGY,
             <br />
@@ -367,6 +386,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

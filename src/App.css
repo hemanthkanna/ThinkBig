@@ -212,6 +212,15 @@ li {
   width: 100%;
   height: 100vh;
   opacity: 0.4;
+  position: relative; /* Ensures that the .left-curve is positioned relative to this container */
+}
+
+.left-curve {
+  position: absolute; /* Positions the image relative to .home-container */
+  top: 0; /* Position from the top of the .home-container */
+  left: 0; /* Position from the left of the .home-container */
+  transform: translate(-100%, -100%); /* Starts off-screen, adjust as needed */
+  z-index: 1; /* Make sure it's above other content but not too high */
 }
 
 .hero-text {
@@ -966,4 +975,68 @@ li {
     width: 150px;
     height: 50px;
   }
+}
+
+/*************************************************************************/
+/* FOOTER */
+/*************************************************************************/
+footer {
+  width: 100%;
+  color: #cacaca;
+  background: var(--secondary-color) url(./Assets/footer-bg.png) center top
+    no-repeat;
+  opacity: 0.9; /* Adjust opacity for better readability */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 30px;
+  padding: 10em 20em; /* Reduced padding for better alignment */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Added shadow for separation */
+  z-index: 1000; /* Ensures it appears above other content */
+}
+
+.child-grid {
+  justify-self: center;
+}
+
+.child-grid h3 {
+  margin: 10px auto;
+  color: #fff;
+}
+
+.child-grid h4 {
+  color: var(--tertiary-color);
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+    padding: 2em;
+    text-align: justify; /* Center text for smaller screens */
+    gap: 10px;
+  }
+
+  .child-grid {
+    justify-self: auto;
+    margin: 10px 0;
+  }
+}
+
+.footer-links li {
+  list-style: none;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+.footer-links li a:hover {
+  color: var(--tertiary-color);
+  transition: all 0.4s ease;
 }
