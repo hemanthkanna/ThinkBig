@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../App.css";
 
 import logo from "../Assets/TSS.png";
@@ -18,19 +19,19 @@ const Footer = () => {
           <h3>EXPLORE</h3>
           <ul className="footer-links">
             <li className="home-link">
-              <a href="">HOME</a>
+              <Link to="/">HOME</Link>
             </li>
             <li className="about-link">
-              <a href="">ABOUT</a>
+              <Link to="/about-us">ABOUT US</Link>
             </li>
             <li className="services-link">
-              <a href="">SERVICES</a>
+              <Link to="/services">SERVICES </Link>
             </li>
             <li className="workflow-dynamics-link">
-              <a href="">WORKFLOW DYNAMICS</a>
+              <Link to="/how-it-works"> WORKFLOW DYNAMICS</Link>
             </li>
             <li className="contact-link">
-              <a href="">CONTACT</a>
+              <Link to="/contact">CONTACT</Link>
             </li>
           </ul>
         </div>

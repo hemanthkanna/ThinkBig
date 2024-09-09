@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../App.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 const Header = () => {
@@ -33,7 +34,14 @@ const Header = () => {
     <header ref={navbarRef} className="header">
       <nav className="navbar">
         <div className="logo-box">
-          <img src="../../src/Assets/TSS.png" alt="logo" className="logo" />
+          <Link to="/">
+            {" "}
+            <img
+              src="../../src/Assets/TSS.png"
+              alt="logo"
+              className="logo"
+            />{" "}
+          </Link>
         </div>
         <div className="hamburger" onClick={() => setmenuOpen(!menuOpen)}>
           <div className="line"></div>
@@ -43,19 +51,19 @@ const Header = () => {
         <div className="nav-links-box">
           <ul className={`${menuOpen ? "open" : ""} nav-links`}>
             <li>
-              <a href="">HOME</a>
+              <Link to="/">HOME</Link>
             </li>
             <li>
-              <a href="">ABOUT US</a>
+              <Link to="/about-us">ABOUT US</Link>
             </li>
             <li>
-              <a href="">HOW IT WORKS</a>
+              <Link to="/workflow-dynamics"> WORKFLOW DYNAMICS</Link>
             </li>
             <li>
-              <a href="">SERVICES</a>
+              <Link to="/services">SERVICES </Link>
             </li>
             <li>
-              <a href="">CONTACT</a>
+              <Link to="/contact">CONTACT</Link>
             </li>
           </ul>
         </div>
