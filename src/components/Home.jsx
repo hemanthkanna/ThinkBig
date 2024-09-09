@@ -21,6 +21,7 @@ import speedyExecution from "../Assets/Speedy Execution.png";
 import globe from "../Assets/17.png";
 import arrow from "../Assets/AIM.png";
 import leftCurve from "../Assets/left-curve-line.png";
+import TestimonialSlider from "./TestimonialSlider";
 
 const Home = () => {
   useEffect(() => {
@@ -247,81 +248,7 @@ const Home = () => {
         <div className="our-projects-gallery"></div>
       </section>
       <section className="testimonial-card-box">
-        <div className="testimonial-card">
-          <div className="testimonial-text">
-            <p>
-              "We've been using ThinkBig for over a year now and it's truly been
-              an incredible experience. Our team has worked tirelessly to
-              develop our digital presence and we're so grateful for their help
-              and support."
-            </p>
-            <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="" />
-              <h3>John Doe</h3>
-              <p>CEO, Company XYZ</p>
-            </div>
-          </div>
-        </div>
-        <div className="testimonial-card">
-          <div className="testimonial-text">
-            <p>
-              "We've been using ThinkBig for over a year now and it's truly been
-              an incredible experience. Our team has worked tirelessly to
-              develop our digital presence and we're so grateful for their help
-              and support."
-            </p>
-            <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="" />
-              <h3>John Doe</h3>
-              <p>CEO, Company XYZ</p>
-            </div>
-          </div>
-        </div>
-        <div className="testimonial-card">
-          <div className="testimonial-text">
-            <p>
-              "We've been using ThinkBig for over a year now and it's truly been
-              an incredible experience. Our team has worked tirelessly to
-              develop our digital presence and we're so grateful for their help
-              and support."
-            </p>
-            <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="" />
-              <h3>John Doe</h3>
-              <p>CEO, Company XYZ</p>
-            </div>
-          </div>
-        </div>
-        <div className="testimonial-card">
-          <div className="testimonial-text">
-            <p>
-              "We've been using ThinkBig for over a year now and it's truly been
-              an incredible experience. Our team has worked tirelessly to
-              develop our digital presence and we're so grateful for their help
-              and support."
-            </p>
-            <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="" />
-              <h3>John Doe</h3>
-              <p>CEO, Company XYZ</p>
-            </div>
-          </div>
-        </div>
-        <div className="testimonial-card">
-          <div className="testimonial-text">
-            <p>
-              "We've been using ThinkBig for over a year now and it's truly been
-              an incredible experience. Our team has worked tirelessly to
-              develop our digital presence and we're so grateful for their help
-              and support."
-            </p>
-            <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="" />
-              <h3>John Doe</h3>
-              <p>CEO, Company XYZ</p>
-            </div>
-          </div>
-        </div>
+        <TestimonialSlider />{" "}
       </section>
       <section className="content-section">
         <div className="content-box">

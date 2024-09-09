@@ -6,7 +6,6 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div></div>
         <div className="TB-info">
           <img src={logo} alt="" className="logo" />
           <p>
