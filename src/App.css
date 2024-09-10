@@ -311,6 +311,10 @@ li {
   border-right: 1px solid rgba(245, 222, 179, 0.2);
 }
 
+.number-count:last-child {
+  border-right: none; /* Remove the right border on the last item */
+}
+
 .number-count h1 {
   margin: 0;
   font-size: 4rem; /* Adjust as needed */
@@ -1082,14 +1086,20 @@ footer {
 /* ABOUT US PAGE COMPONENT */
 /***************************************************************/
 
-.about-us-text-box {
+.about-container {
+  background-image: url("./Assets/about-2.jpeg");
+}
+
+.about-us-text-box,
+.workflow-text-box {
   /* background-color: #cacaca; */
   background-image: url("./Assets/pattern-2.png");
   padding: 0.2rem 0;
   height: fit-content;
 }
 
-.about-text {
+.about-text,
+.workflow-text {
   padding: 4em 0;
   display: grid;
   grid-template-columns: 1fr;
@@ -1104,7 +1114,8 @@ footer {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Added shadow for separation */
 }
 
-.about-text h2 {
+.about-text h2,
+.workflow-text h2 {
   text-transform: uppercase;
   transform: scaleY(1.2) scaleX(1.3);
   font-weight: 600;
@@ -1127,6 +1138,61 @@ footer {
   margin: 0 auto;
   text-align: center;
   transition: all 0.4s ease;
+}
+
+.about-us-text-box {
+  background-image: url("./Assets/About_us-code.png");
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-attachment: fixed; /* Creates the parallax effect */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: fit-content;
+  position: relative; /* Allows for stacking content */
+  z-index: 1; /* Adjusts stacking context */
+}
+
+.about-text {
+  padding: 4em 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 30px;
+  text-align: center;
+  margin: auto;
+  transition: all 0.4s ease;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent background for better readability */
+  color: #fff;
+
+  position: relative; /* Position relative to stack above background */
+  z-index: 2; /* Ensures text appears above background */
+}
+
+.about-text h2 {
+  text-transform: uppercase;
+  transform: scaleY(1.2) scaleX(1.3);
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out;
+  font-size: 3.5vw;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1;
+}
+
+.about-text p {
+  color: #ffaa17;
+  font-size: 1.8em;
+  line-height: 1.8;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.4s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Added text shadow for readability */
 }
 
 @media only screen and (max-width: 599px) {
@@ -1182,9 +1248,62 @@ footer {
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   justify-content: space-between;
+  align-items: center;
+}
+
+.column {
+  padding: 20px;
+}
+
+.agency-content h2 {
+  text-transform: uppercase;
+  transform: scaleY(1.2) scaleX(1.3);
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out;
+  font-size: 1.5em;
+  font-weight: 400;
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  word-wrap: break-word;
+  line-height: 1;
+}
+
+.agency-content nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  width: 60%;
+}
+
+.agency-content nav ul li button {
+  background: #fff;
+  border: none;
+  color: #000;
+  font-size: 1em;
+  transition: color 0.4s ease;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  border: 1px solid #ffaa17;
+}
+
+.agency-content nav ul li button:hover {
+  color: var(--tertiary-color);
+}
+
+/**********************************************************************/
+/* WORKFLOW DYNAMIC PAGE COMPONENT */
+/**********************************************************************/
+
+.workflow-container {
+  background-image: url("./Assets/workflow-3.jpeg");
 }
 
 .workflow-text {
@@ -1202,6 +1321,79 @@ footer {
 .img-sec {
   width: 100%;
   height: 900px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .workflow-text {
+    margin: 4rem auto;
+  }
+  .workflow-text h2 {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .workflow-text {
+    margin: 2rem auto;
+  }
+}
+
+.img-sec {
+  background-color: #fbfdff;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  justify-items: end;
+  position: relative;
+  background-image: url("./Assets//pattern-2.png");
+}
+
+.img-sec img {
+  width: 460px;
+  height: auto;
+  border-radius: 15px;
+}
+
+.img-sec-2 {
+  width: 500px;
+  height: auto;
+  color: #000;
+  justify-self: center;
+  border-radius: 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Added shadow for separation */
+  background-color: #ffffff;
+  padding: 4rem;
+  position: absolute;
+  top: 6%;
+  left: 45%;
+}
+
+.img-sec-2 h2 {
+  text-transform: uppercase;
+  transform: scaleY(1.2) scaleX(1.3);
+  font-weight: 600;
+  transition: transform 0.3s ease-in-out;
+  font-size: 2em;
+  font-weight: 400;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 1;
+  color: var(--tertiary-color);
+  opacity: 0.5;
+}
+
+.img-sec-2 p {
+  color: #000;
+  font-size: 1.2em;
+  line-height: 2;
+  margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  transition: all 0.4s ease;
+  font-weight: 300;
 }
 
 .call-to-section {
@@ -1333,4 +1525,8 @@ footer {
     line-height: 1;
     flex-grow: 2;
   }
+}
+
+.services-container {
+  background-image: url("./Assets/workflow-1.jpeg");
 }

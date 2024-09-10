@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 import Agency from "./Agency";
+import about from "../Assets/about.png";
 
 const AboutUs = () => {
   useEffect(() => {
@@ -86,7 +87,7 @@ const AboutUs = () => {
     <>
       <Header />
       <section>
-        <div className="home-container"></div>
+        <div className="home-container about-container"></div>
 
         <div className="hero-text">
           {/* <img src={leftCurve} className="left-curve" alt="" /> */}

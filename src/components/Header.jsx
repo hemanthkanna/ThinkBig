@@ -60,7 +60,7 @@ const Header = () => {
               <Link to="/workflow-dynamics"> WORKFLOW DYNAMICS</Link>
             </li>
             <li>
-              <Link to="/services">SERVICES </Link>
+              <Link to="/services">SERVICES</Link>
             </li>
             <li>
               <Link to="/contact">CONTACT</Link>

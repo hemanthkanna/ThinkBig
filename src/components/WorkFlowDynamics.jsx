@@ -16,6 +16,7 @@ import ConceptualizationMockup from "../Assets/Conceptualization & Mockup.png";
 import implementation from "../Assets/Implementation.png";
 import testingValidation from "../Assets/Testing & Validation.png";
 import deployment from "../Assets/Deployment (1).png";
+import imagesection from "../Assets/Digital.png";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -84,6 +85,25 @@ const WorkFlowDynamics = () => {
       );
     });
 
+    gsap.fromTo(
+      ".img-sec-1",
+      {
+        opacity: 0,
+        x: "-100vw",
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 2.5,
+        scrollTrigger: {
+          trigger: ".img-sec-1",
+          start: "top 60%",
+          end: "bottom 40%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
     return () => {
       lenis.destroy(); // Proper cleanup of Lenis instance
       ScrollTrigger.killAll(); // Kill all ScrollTriggers
@@ -93,7 +113,7 @@ const WorkFlowDynamics = () => {
     <>
       <Header />
       <section>
-        <div className="home-container"></div>
+        <div className="home-container workflow-container"></div>
 
         <div className="hero-text">
           {/* <img src={leftCurve} className="left-curve" alt="" /> */}
@@ -173,8 +193,8 @@ const WorkFlowDynamics = () => {
           </div>
         </div>
       </section>
-      <section className="about-us-text-box">
-        <div className="about-text workflow-text">
+      <section className="workflow-text-box">
+        <div className="workflow-text">
           <h2 className="text-reveal">
             Innovative, Adaptable, and Cost-Effective Solutions Designed to Meet
             Your Business Requirements
@@ -182,8 +202,17 @@ const WorkFlowDynamics = () => {
         </div>
       </section>
       <section className="img-sec">
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <div className="img-sec-1">
+          <img src={imagesection} alt="" />
+        </div>
+        <div className="img-sec-2">
+          <h2 className="text-reveal">Streamlined Digital Solutions</h2> <br />
+          <p className="text-reveal">
+            Effortlessly design, develop, and launch all your digital services
+            while overcoming business challenges through simple, effective, and
+            innovative solutions that scale with your needs.
+          </p>
+        </div>
       </section>
       <section className="call-to-section">
         <div className="call-to-box">
