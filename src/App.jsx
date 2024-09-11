@@ -5,6 +5,7 @@ import AboutUs from "./components/AboutUs";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import WorkFlowDynamics from "./components/WorkFlowDynamics";
 import Services from "./components/Services";
+import ServiceElementComponent from "./components/ServiceElementComponent";
 function App() {
   return (
     <Router>
@@ -14,6 +15,10 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/workflow-dynamics" element={<WorkFlowDynamics />} />
           <Route path="/services" element={<Services />} />
+          <Route
+            path="/services/:serviceId"
+            element={<ServiceElementComponent />}
+          />
         </Routes>
       </div>
     </Router>

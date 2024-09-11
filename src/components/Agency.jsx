@@ -14,16 +14,16 @@ const Agency = () => {
       "To transform the application landscape through innovation and simplicity.",
     mission:
       "To create tailored, highly-effective applications that " +
-      "meet real-world needs.To deliver straightforward and optimal" +
-      " solutions that enable our clients to effortlessly establish " +
-      " their digital footprint.",
-
+      "meet real-world needs. To deliver straightforward and optimal " +
+      "solutions that enable our clients to effortlessly establish " +
+      "their digital footprint.",
     timeline:
       "From the beginning, Thinkbig Software Solutions Pvt Ltd " +
       "has been dedicated to tackling challenges, discovering " +
-      " unique solutions, and achieving outstanding outcomes. " +
+      "unique solutions, and achieving outstanding outcomes. " +
       "We take pride in contributing to our clients' success.",
   };
+
   return (
     <>
       <div className="auto-container">
@@ -34,17 +34,26 @@ const Agency = () => {
               <nav>
                 <ul>
                   <li>
-                    <button onClick={() => handleLinkClick("vision")}>
+                    <button
+                      onClick={() => handleLinkClick("vision")}
+                      className={selected === "vision" ? "active" : ""}
+                    >
                       VISION
                     </button>
                   </li>
                   <li>
-                    <button onClick={() => handleLinkClick("mission")}>
+                    <button
+                      onClick={() => handleLinkClick("mission")}
+                      className={selected === "mission" ? "active" : ""}
+                    >
                       MISSION
                     </button>
                   </li>
                   <li>
-                    <button onClick={() => handleLinkClick("timeline")}>
+                    <button
+                      onClick={() => handleLinkClick("timeline")}
+                      className={selected === "timeline" ? "active" : ""}
+                    >
                       TIMELINE
                     </button>
                   </li>
@@ -62,6 +71,7 @@ const Agency = () => {
               journey, allowing them to witness their projects evolve and come
               to life.
             </p>
+            <br />
             <p>
               We are dedicated to creating visually stunning applications that
               streamline and simplify everyday tasks. Our team, driven by
