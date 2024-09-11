@@ -15,10 +15,7 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/workflow-dynamics" element={<WorkFlowDynamics />} />
           <Route path="/services" element={<Services />} />
-          <Route
-            path="/services/:serviceId"
-            element={<ServiceElementComponent />}
-          />
+          <Route path="/services/:id" element={<ServiceElementComponent />} />
         </Routes>
       </div>
     </Router>

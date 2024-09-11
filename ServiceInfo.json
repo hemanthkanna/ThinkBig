@@ -1,32 +1,32 @@
- {
-    "websiteDevelopment" : {
-        "id": "1",
+ [
+     {
+        "id": "websiteDevelopment",
         "title" : "Website Development",
         "description" : "Crafting dynamic, responsive websites that drive business growth and digital presence.",
         "image" : "website-development.png"
     },
-    "mobileAppDevelopment" : {
-        "id": "2",
+      {
+        "id": "mobileAppDevelopment",
         "title" : "Mobile App Development",
         "description" : "Building intuitive, high-performance mobile apps to engage users and elevate your brand.",
         "image" : "mobile-app-development.png"
     },
-    "uiUxDesign" : {
-        "id": "3",
+     {
+        "id": "uiUxDesign",
         "title" : "UI/UX Design",
         "description" : "Designing user-centric interfaces that blend aesthetics with seamless functionality for an exceptional digital experience.",
         "image" : "ui-ux-design.png"
     },
-    "sapProjects" : {
-        "id": "4",
+    {
+        "id": "sapProjects" ,
         "title" : "SAP Projects",
         "description" : "Implementing robust SAP solutions that optimize business processes and enhance operational efficiency.",
         "image" : "sap-projects.png"
     },
-    "digitalMarketing" : {
-        "id": "5",
+     {
+        "id": "digitalMarketing",
         "title" : "Digital Marketing Services",
         "description" : "Driving targeted growth and brand visibility through innovative, data-driven digital marketing strategies.",
         "image" : "digital-marketing.png"
     }
-}
+ ]
