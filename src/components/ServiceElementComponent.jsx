@@ -5,7 +5,7 @@ import "../App.css";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -137,14 +137,18 @@ const ServiceElementComponent = () => {
         ></div>
 
         <div className="hero-text" ref={heroTextRef}>
-          <h1>
-            MASTERING TECHNOLOGY,
-            <br />
-            SHAPING THE FUTURE.
-          </h1>
-          <button className="hero-button" ref={heroButtonRef}>
+          <h1>{pageData.title}</h1>
+          {/* <button className="hero-button" ref={heroButtonRef}>
             DISCOVER MORE!
-          </button>
+          </button> */}
+          <ul>
+            <Link to="/">
+              <li>HOME</li>
+            </Link>
+            <Link to="/services">
+              <li>SERVICES</li>
+            </Link>
+          </ul>
         </div>
       </section>
       <section>

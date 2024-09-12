@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Lenis from "lenis";
@@ -22,8 +22,50 @@ import globe from "../Assets/17.png";
 import arrow from "../Assets/AIM.png";
 import leftCurve from "../Assets/left-curve-line.png";
 import TestimonialSlider from "./TestimonialSlider";
+import ImageSlider from "./ImageSlider";
+
+import showcaseImage1 from "../Assets/showcase-1.jpeg";
+import showcaseImage3 from "../Assets/showcase-3.jpeg";
+import showcaseImage4 from "../Assets/showcase-4.jpeg";
+import showcaseImage5 from "../Assets/showcase-5.jpeg";
+import showcaseImage6 from "../Assets/showcase-6.jpeg"; // Add more images as needed
 
 const Home = () => {
+  const [sliderImages, setSliderImages] = useState("All");
+
+  // Define different image sets
+  const imageSets = {
+    All: [
+      { src: showcaseImage1, alt: "Image 1" },
+      { src: showcaseImage3, alt: "Image 2" },
+      { src: showcaseImage4, alt: "Image 3" },
+      { src: showcaseImage5, alt: "Image 4" },
+    ],
+    website: [
+      { src: showcaseImage1, alt: "Website Image 1" },
+      { src: showcaseImage4, alt: "Website Image 2" },
+      { src: showcaseImage5, alt: "Digital Marketing Image 1" },
+    ],
+    mobileApp: [
+      { src: showcaseImage3, alt: "Mobile App Image 1" },
+      { src: showcaseImage5, alt: "Mobile App Image 2" },
+      { src: showcaseImage6, alt: "Mobile App Image 3" },
+    ],
+    uiux: [
+      { src: showcaseImage4, alt: "UI/UX Image 1" },
+      { src: showcaseImage5, alt: "Digital Marketing Image 1" },
+      { src: showcaseImage6, alt: "Digital Marketing Image 2" },
+    ],
+    digitalMarketing: [
+      { src: showcaseImage5, alt: "Digital Marketing Image 1" },
+      { src: showcaseImage6, alt: "Digital Marketing Image 2" },
+      { src: showcaseImage6, alt: "Digital Marketing Image 2" },
+    ],
+  };
+
+  // Get images and determine the number of slides per view
+  const selectedImages = imageSets[sliderImages] || [];
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -236,18 +278,61 @@ const Home = () => {
       <section className="our-projects">
         <div className="our-project-text">
           <h1 className="text-reveal">OUR PROJECT GALLERY</h1>
-          <ul className="text-reveal">
-            <li>ALL</li>
-            <li>WEBSITES</li>
-            <li>MOBILE APPS</li>
-            <li>SAP PROJECTS</li>
-            <li>UI UX DESIGN</li>
-            <li>DIGITAL MARKETING</li>
+          <ul className="text-reveal project-links">
+            <li>
+              <a
+                className="project-link"
+                onClick={() => setSliderImages("All")}
+              >
+                ALL
+              </a>
+            </li>
+            <li>
+              <a
+                className="project-link"
+                onClick={() => setSliderImages("website")}
+              >
+                WEBSITES
+              </a>
+            </li>
+            <li>
+              <a
+                className="project-link"
+                onClick={() => setSliderImages("mobileApp")}
+              >
+                MOBILE APPS
+              </a>
+            </li>
+            <li>
+              <a
+                className="project-link"
+                onClick={() => setSliderImages("uiux")}
+              >
+                UI UX DESIGN
+              </a>
+            </li>
+            <li>
+              <a
+                className="project-link"
+                onClick={() => setSliderImages("digitalMarketing")}
+              >
+                DIGITAL MARKETING
+              </a>
+            </li>
           </ul>
         </div>
-        <div className="our-projects-gallery"></div>
+        <div className="our-projects-gallery">
+          {/* Pass selected images and slidesPerView to the ImageSlider */}
+          <ImageSlider images={selectedImages} />
+        </div>
       </section>
       <section className="testimonial-card-box">
+        <div className="services-text">
+          <h1 className="text-reveal">TESTIMONIALS</h1>
+          <p className="text-reveal">
+            HERE ARE SOME OF OUR CLIENTS AND THEIR FEEDBACKS
+          </p>
+        </div>
         <TestimonialSlider />{" "}
       </section>
       <section className="content-section">
