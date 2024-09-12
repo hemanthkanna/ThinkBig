@@ -103,7 +103,11 @@ const Header = () => {
         <div className="emailus">
           <span>
             <p className="e-text">EMAIL US</p>
-            <p>hr@thinkbigsoft.com</p>
+            <p>
+              <a href="mailto:" className="mailto">
+                hr@thinkbigsoft.com
+              </a>
+            </p>
           </span>
         </div>
       </nav>

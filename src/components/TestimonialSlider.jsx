@@ -8,6 +8,11 @@ import "swiper/css/navigation";
 // Import Swiper core and required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
+import ERO from "../Assets/ERO BR.png";
+import Crown from "../Assets/CROWN BR.png";
+import Vaxfab from "../Assets/VAXFAB BR.png";
+import growwell from "../Assets/grow well BR.png";
+
 const TestimonialSlider = () => {
   return (
     <Swiper
@@ -51,7 +56,7 @@ const TestimonialSlider = () => {
               and support."
             </p>
             <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="John Doe" />
+              <img src={ERO} alt="John Doe" />
               <h3>John Doe</h3>
               <p>CEO, Company XYZ</p>
             </div>
@@ -68,7 +73,7 @@ const TestimonialSlider = () => {
               and support."
             </p>
             <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="John Doe" />
+              <img src={Crown} alt="John Doe" />
               <h3>John Doe</h3>
               <p>CEO, Company XYZ</p>
             </div>
@@ -85,7 +90,7 @@ const TestimonialSlider = () => {
               and support."
             </p>
             <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="John Doe" />
+              <img src={growwell} alt="John Doe" />
               <h3>John Doe</h3>
               <p>CEO, Company XYZ</p>
             </div>
@@ -102,7 +107,7 @@ const TestimonialSlider = () => {
               and support."
             </p>
             <div className="testimonial-author">
-              <img src="https://via.placeholder.com/100" alt="John Doe" />
+              <img src={Vaxfab} alt="John Doe" />
               <h3>John Doe</h3>
               <p>CEO, Company XYZ</p>
             </div>

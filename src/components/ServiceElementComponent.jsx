@@ -131,10 +131,7 @@ const ServiceElementComponent = () => {
     <>
       <Header />
       <section>
-        <div
-          className="home-container about-container"
-          ref={homeContainerRef}
-        ></div>
+        <div className="home-container" ref={homeContainerRef}></div>
 
         <div className="hero-text" ref={heroTextRef}>
           <h1>{pageData.title}</h1>
@@ -151,23 +148,45 @@ const ServiceElementComponent = () => {
           </ul>
         </div>
       </section>
-      <section>
-        <div className="service-info">
+      <section className="service-section-container">
+        <div className="service-info-box">
           <h2>{pageData.title}</h2>
+          <br />
           <p>{pageData.description}</p>
-        </div>
-        {/* {pageData.images && (
-          <div className="service-images">
-            {pageData.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`Service Image ${index + 1}`}
-                ref={(el) => (textRevealRefs.current[index] = el)}
-              />
+          <ul>
+            <h3>{pageData.keypoints[0]}</h3>
+            <br />
+            {pageData.keypoints.map((keypoint, index) => (
+              <li key={index}>{keypoint}</li>
             ))}
-          </div>
-        )} */}
+          </ul>
+          <p>{pageData.description2}</p>
+        </div>
+        <div className="service-links-box">
+          <span>ALL SERVICES</span>
+          <ul>
+            {" "}
+            <li>
+              <Link to="/services/websiteDevelopment">Web Development</Link>
+            </li>
+            <li>
+              <Link to="/services/mobileAppDevelopment">
+                Mobile App Development
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/uiUxDesign">UI-UX Design</Link>
+            </li>
+            <li>
+              <Link to="/services/sapProjects">SAP Projects</Link>
+            </li>
+            <li>
+              <Link to="/services/digitalMarketing">
+                Digital Marketing Services
+              </Link>
+            </li>
+          </ul>
+        </div>
       </section>
       <Footer />
     </>

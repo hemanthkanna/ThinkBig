@@ -2,14 +2,39 @@
      {
         "id": "websiteDevelopment",
         "title" : "Website Development",
-        "description" : "Crafting dynamic, responsive websites that drive business growth and digital presence.",
+        "keypoints" : ["Our services include", "Mobile-Responsive Websites",
+        "WordPress CMS Web Design",
+        "eCommerce Development",
+        "Static and Dynamic Websites",
+        "Portal Development",
+        "Multimedia and Interactive Websites",
+        "Open-Source Development",
+        "SEO Services",
+        "SEO-Optimized Web Design",
+        "Conversion Rate Optimization",
+        "Landing Page Optimization"],
+        "description" : "Thinkbig Software Solutions Pvt Ltd provides premium web development and remodeling services, designed for speed, responsiveness, and visual excellence. Our design approach ensures that information is accessible with minimal clicks and simplified navigation.",
+        "description2" : "Thinkbig Software Solutions Pvt Ltd provides premium web development and remodeling services, designed for speed, responsiveness, and visual excellence. Our design approach ensures that information is accessible with minimal clicks and simplified navigation.",
         "image" : "website-development.png"
     },
+
+
       {
         "id": "mobileAppDevelopment",
         "title" : "Mobile App Development",
-        "description" : "Building intuitive, high-performance mobile apps to engage users and elevate your brand.",
-        "image" : "mobile-app-development.png"
+        "keypoints" : ["Our mobile application services include:", "iOS App Development",
+        "Android App Development",
+        "Cross-Platform App Development",
+        "Mobile App UI/UX Design",
+        "App Testing and Quality Assurance",
+        "App Maintenance and Support",
+        "Custom Mobile Solutions",
+        "App Integration with Existing Systems"
+    ],
+        "description" : "Thinkbig Software Solutions Pvt Ltd excels in creating innovative mobile applications that are fast, responsive, and user-friendly. Our mobile app development services are designed to meet your business needs with seamless functionality and engaging user experiences.", 
+        "description2": "We leverage a robust technology stack to deliver high-quality mobile apps, including Swift, Objective-C, Kotlin, Java, Flutter, React Native, Xamarin, and Ionic. Our team of mobile app experts ensures that each application is crafted to provide a seamless experience, optimized for performance, security, and scalability across all devices and platforms.",
+         "image" : "mobile-app-development.png"
+
     },
      {
         "id": "uiUxDesign",
