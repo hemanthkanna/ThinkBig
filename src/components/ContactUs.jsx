@@ -111,50 +111,58 @@ const ContactUs = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+
         <div className="form-container">
-          <h2>CONTACT US</h2>
-          <form>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            {/* Dropdown for Reason */}
-            <div className="form-group">
-              <label htmlFor="reason">Reason for Contact</label>
-              <select id="reason" name="reason" required>
-                <option value="" disabled selected>
-                  Select a reason
-                </option>
-                <option value="website">Website</option>
-                <option value="mobile">Mobile App</option>
-                <option value="design">UI/UX Design</option>
-                <option value="project">SAP Project</option>
-                <option value="marketing">Digital Marketing</option>
-                <option value="feedback">Feedback</option>
-                <option value="general">General Inquiry</option>
-              </select>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" className="submit-button">
-              Send Message
-            </button>
-          </form>
+          <div className="title">Registration Form</div>
+          <hr />
+          <div className="content">
+            <form action="#">
+              <div className="user-details">
+                <div className="input-box">
+                  <span className="details">Full Name</span>
+                  <input type="text" placeholder="Enter your name" required />
+                </div>
+                <div className="input-box">
+                  <span className="details">Email</span>
+                  <input type="text" placeholder="Enter your email" required />
+                </div>
+                <div className="input-box">
+                  <span className="details">Phone Number</span>
+                  <input type="text" placeholder="Enter your phone number" />
+                </div>
+                <div className="input-box">
+                  <span className="details">Company Name</span>
+                  <select id="reason" name="reason" required>
+                    <option value="" disabled selected>
+                      Select a reason
+                    </option>
+                    <option value="website">Website</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="project">SAP Project</option>
+                    <option value="marketing">Digital Marketing</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="general">General Inquiry</option>
+                  </select>
+                </div>
+                <div className="input-box">
+                  <span className="details"> Your Message</span>
+                  <textarea
+                    className="message"
+                    placeholder="Your Message"
+                    rows="5"
+                    name="message"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              <div className="button-container">
+                <div className="button">
+                  <input type="submit" value="Submit" />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
 

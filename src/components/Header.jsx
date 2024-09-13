@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "../App.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,6 +10,7 @@ const Header = () => {
   const navbarRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const header = navbarRef.current;
@@ -30,6 +31,10 @@ const Header = () => {
       ScrollTrigger.killAll();
     };
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleDropdown = (e) => {
     e.preventDefault();
