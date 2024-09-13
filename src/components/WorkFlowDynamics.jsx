@@ -216,10 +216,13 @@ const WorkFlowDynamics = () => {
       </section>
       <section className="call-to-section">
         <div className="call-to-box">
-          <h1>Ready to Launch Your Project? Get in touch with us today!.</h1>
-          <button className="call-us-button">Contact Us</button>
+          <h1>Ready to Launch Your Project? Get in touch with us today!</h1>
+          <button className="call-us-button" aria-label="Contact Us">
+            Contact Us
+          </button>
         </div>
       </section>
+
       <Footer />
     </>
   );

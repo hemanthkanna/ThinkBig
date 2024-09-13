@@ -14,11 +14,9 @@
         "Conversion Rate Optimization",
         "Landing Page Optimization"],
         "description" : "Thinkbig Software Solutions Pvt Ltd provides premium web development and remodeling services, designed for speed, responsiveness, and visual excellence. Our design approach ensures that information is accessible with minimal clicks and simplified navigation.",
-        "description2" : "Thinkbig Software Solutions Pvt Ltd provides premium web development and remodeling services, designed for speed, responsiveness, and visual excellence. Our design approach ensures that information is accessible with minimal clicks and simplified navigation.",
+        "description2" : "We build functional, search engine-friendly websites that are secure, scalable, and adaptable to all devices and screen sizes. Our expert team works with a comprehensive technology stack, including HTML5, CSS3, JavaScript, PHP, Python, Ruby on Rails, Node.js, React, Angular, and Vue.js, to deliver innovative and world-class solutions tailored to your needs.",
         "image" : "website-development.png"
     },
-
-
       {
         "id": "mobileAppDevelopment",
         "title" : "Mobile App Development",
@@ -31,7 +29,7 @@
         "Custom Mobile Solutions",
         "App Integration with Existing Systems"
     ],
-        "description" : "Thinkbig Software Solutions Pvt Ltd excels in creating innovative mobile applications that are fast, responsive, and user-friendly. Our mobile app development services are designed to meet your business needs with seamless functionality and engaging user experiences.", 
+        "description" : "Thinkbig Software Solutions Pvt Ltd excels in creating innovative mobile applications that are fast, responsive, and user-friendly. Our mobile app development services are designed to meet your business needs with seamless functionality and engaging user experiences.", 
         "description2": "We leverage a robust technology stack to deliver high-quality mobile apps, including Swift, Objective-C, Kotlin, Java, Flutter, React Native, Xamarin, and Ionic. Our team of mobile app experts ensures that each application is crafted to provide a seamless experience, optimized for performance, security, and scalability across all devices and platforms.",
          "image" : "mobile-app-development.png"
 
@@ -39,19 +37,51 @@
      {
         "id": "uiUxDesign",
         "title" : "UI/UX Design",
-        "description" : "Designing user-centric interfaces that blend aesthetics with seamless functionality for an exceptional digital experience.",
+        "keypoints":["Our UI/UX design services include:",
+        "User Research & Analysis",
+        "Wireframing & Prototyping",
+        "Visual Design",
+        "Interaction Design",
+        "Usability Testing",
+        "Responsive Design",
+        "Information Architecture"],
+        "description" : "Thinkbig Software Solutions Pvt Ltd excels in creating outstanding UI/UX designs that blend functionality with aesthetic appeal. Our design philosophy prioritizes user experience, ensuring intuitive, engaging, and visually striking interfaces.",
+        "description2":"We use a diverse set of tools and technologies, including Adobe XD, Figma, Sketch, InVision, Axure, Marvel, and Balsamiq, to deliver designs that are user-centered and align with your brand’s goals. Our approach ensures that every design is not only visually appealing but also optimized for usability across all devices and platforms.",
         "image" : "ui-ux-design.png"
     },
     {
         "id": "sapProjects" ,
         "title" : "SAP Projects",
-        "description" : "Implementing robust SAP solutions that optimize business processes and enhance operational efficiency.",
+        "keypoints":["Our SAP services include:",
+        "ABAP Development",
+        "Materials Management (MM)",
+        "Sales and Distribution (SD)",
+        "Financial Accounting (FICO)",
+        "Production Planning (PP)",
+        "Master Data Governance (MDG)",
+        "SAP Basis Consulting",
+        "Governance, Risk, and Compliance (GRC)",
+        "HCP Payroll",
+        "Human Capital Management (HCM)",
+        "SuccessFactors"],
+        "description" : "Thinkbig Software Solutions Pvt Ltd specializes in comprehensive SAP services tailored to enhance your business operations. Our solutions are designed for efficiency, integration, and scalability, addressing a broad range of SAP modules and functionalities.",
+        "description2":"We deliver robust SAP solutions that ensure seamless integration, optimal performance, and adaptability to your evolving business needs. Our team of skilled consultants and developers employs industry-leading practices and advanced technologies to provide world-class SAP implementations and support.",
         "image" : "sap-projects.png"
     },
      {
         "id": "digitalMarketing",
         "title" : "Digital Marketing Services",
-        "description" : "Driving targeted growth and brand visibility through innovative, data-driven digital marketing strategies.",
+        "keypoints":["Our Digital Marketing services include:",
+        "Search Engine Optimization (SEO)",
+        "Pay-Per-Click Advertising (PPC)",
+        "Social Media Marketing (SMM)",
+        "Content Marketing",
+        "Email Marketing",
+        "Conversion Rate Optimization (CRO)",
+        "Affiliate Marketing",
+        "Influencer Marketing"],
+        "description" : "Thinkbig Software Solutions Pvt Ltd delivers comprehensive digital marketing solutions designed to elevate your online presence and drive business growth. Our strategies are data-driven, result-oriented, and tailored to meet your unique business goals.",
+        "description2":"We leverage a range of tools and platforms, including Google Analytics, Google Ads, Facebook Ads, LinkedIn Ads, SEMrush, Ahrefs, HubSpot, Mailchimp, and Hootsuite, to craft and execute effective marketing campaigns. Our approach ensures that your brand reaches the right audience, maximizes engagement, and achieves measurable results.",
         "image" : "digital-marketing.png"
     }
  ]
