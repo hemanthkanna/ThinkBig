@@ -95,6 +95,68 @@ const ContactUs = () => {
           <button className="hero-button">DISCOVER MORE!</button>
         </div>
       </section>
+      <section className="contact-section">
+        <div className="map-box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3887.3421851226326!2d80.201136!3d13.013868!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d6ecb6b38b%3A0xa2c51b24c0f6bab5!2sThe%20Executive%20Centre%20-%20Olympia%20Teknos!5e0!3m2!1sen!2sin!4v1726211349806!5m2!1sen!2sin"
+            width="600"
+            height="450"
+            title="The Executive Centre - Olympia Teknos"
+            frameBorder="0"
+            scrolling="no"
+            aria-hidden="false"
+            tabIndex="0"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div className="form-container">
+          <h2>CONTACT US</h2>
+          <form>
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            {/* Dropdown for Reason */}
+            <div className="form-group">
+              <label htmlFor="reason">Reason for Contact</label>
+              <select id="reason" name="reason" required>
+                <option value="" disabled selected>
+                  Select a reason
+                </option>
+                <option value="website">Website</option>
+                <option value="mobile">Mobile App</option>
+                <option value="design">UI/UX Design</option>
+                <option value="project">SAP Project</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="feedback">Feedback</option>
+                <option value="general">General Inquiry</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" className="submit-button">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
 
       <Footer />
     </>

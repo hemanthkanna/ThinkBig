@@ -221,7 +221,7 @@ li {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .nav-links-box ul {
     position: absolute;
     top: 100%;
@@ -1944,4 +1944,192 @@ footer {
   .service-info-box {
     gap: 0.5rem;
   }
+}
+
+/*****************************************************************/
+/* CONTACT US PAGE COMPONENT */
+/*****************************************************************/
+
+iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.contact-section {
+  background-image: url("./Assets/pattern-2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 5rem;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+}
+.form-container {
+  padding: 20px;
+  max-width: 500px;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  color: #000;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Button Styling */
+.submit-button {
+  width: 200px;
+  height: 70px;
+  border-radius: 0.2em;
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 20px auto;
+  background-color: var(--quaternary-color);
+  transition: background-color 0.4s ease;
+  color: var(--primary-color);
+  cursor: pointer; /* Adds a pointer on hover */
+}
+
+.submit-button::before {
+  content: "";
+  width: 0;
+  height: 70px;
+  border-radius: 0.2em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: skewX(-22deg);
+  transition: width 0.4s ease;
+  display: block;
+  z-index: -1;
+  background-image: linear-gradient(to right, #ffffff 0%, #fdfeff 100%);
+}
+
+.submit-button:hover::before {
+  width: 200px; /* Expands the width on hover */
+}
+
+.submit-button:hover {
+  color: #000; /* Changes text color on hover */
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  appearance: none; /* Removes default dropdown arrow for customization */
+}
+
+/* Dropdown arrow styling for better appearance */
+.form-group select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .submit-button {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .form-group select {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.sticky-contact-button {
+  position: fixed; /* Sticks the element to a fixed position */
+  right: 20px; /* Distance from the right side of the screen */
+  bottom: 20px; /* Distance from the bottom of the screen */
+  padding: 10px 20px;
+  background-color: #ff6b6b; /* Button background color */
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sticky-contact-button:hover {
+  transform: translateY(-3px); /* Slight upward movement on hover */
+  background-color: #ff3b3b; /* Darker shade on hover */
+}
+
+.scroll-to-top-button {
+  position: fixed; /* Fixed position on the screen */
+  right: 20px; /* Distance from the right edge */
+  top: 20px; /* Distance from the top edge */
+  padding: 10px;
+  background-color: #ff6b6b; /* Background color */
+  color: white;
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  font-size: 24px; /* Font size for the arrow */
+  text-align: center;
+  line-height: 1;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Hidden by default */
+  z-index: 1000; /* Ensure button is on top */
+}
+
+.scroll-to-top-button.show {
+  opacity: 1; /* Visible when class is added */
+  visibility: visible; /* Visible when class is added */
+}
+
+.scroll-to-top-button:hover {
+  background-color: #ff3b3b; /* Darker shade on hover */
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
 }
