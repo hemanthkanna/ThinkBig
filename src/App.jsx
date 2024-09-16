@@ -7,6 +7,7 @@ import WorkFlowDynamics from "./components/WorkFlowDynamics";
 import Services from "./components/Services";
 import ServiceElementComponent from "./components/ServiceElementComponent";
 import ContactUs from "./components/ContactUs";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
           <Route path="/services/:id" element={<ServiceElementComponent />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
+        <ScrollToTop />
       </div>
     </Router>
   );

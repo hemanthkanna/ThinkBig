@@ -2132,50 +2132,23 @@ form .button input:hover {
   }
 }
 
-.sticky-contact-button {
-  position: fixed; /* Sticks the element to a fixed position */
-  right: 20px; /* Distance from the right side of the screen */
-  bottom: 20px; /* Distance from the bottom of the screen */
-  padding: 10px 20px;
-  background-color: #ff6b6b; /* Button background color */
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  font-weight: bold;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.sticky-contact-button:hover {
-  transform: translateY(-3px); /* Slight upward movement on hover */
-  background-color: #ff3b3b; /* Darker shade on hover */
-}
-
 .scroll-to-top-button {
-  position: fixed; /* Fixed position on the screen */
-  right: 20px; /* Distance from the right edge */
-  top: 20px; /* Distance from the top edge */
-  padding: 10px;
-  background-color: #ff6b6b; /* Background color */
-  color: white;
-  border-radius: 50%; /* Circular shape */
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  font-size: 24px; /* Font size for the arrow */
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  color: var(--secondary-color);
+  font-size: 14px;
+  line-height: 44px;
+  border-radius: 50%;
   text-align: center;
-  line-height: 1;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  opacity: 0; /* Hidden by default */
-  visibility: hidden; /* Hidden by default */
-  z-index: 1000; /* Ensure button is on top */
-}
-
-.scroll-to-top-button.show {
-  opacity: 1; /* Visible when class is added */
-  visibility: visible; /* Visible when class is added */
+  z-index: 100;
+  cursor: pointer;
+  background: var(--tertiary-color);
+  transition: all 300ms ease;
 }
 
 .scroll-to-top-button:hover {
-  background-color: #ff3b3b; /* Darker shade on hover */
-  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  transform: translateY(-3px); /* Slight upward movement on hover */
 }
