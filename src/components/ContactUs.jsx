@@ -2,15 +2,25 @@ import Footer from "./Footer";
 import Header from "./Header";
 import "../App.css";
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import axios from "axios";
 
-// Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactUs = () => {
+  // State for form inputs and validation errors
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    reason: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [response, setResponse] = useState();
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -75,10 +85,81 @@ const ContactUs = () => {
     });
 
     return () => {
-      lenis.destroy(); // Proper cleanup of Lenis instance
-      ScrollTrigger.killAll(); // Kill all ScrollTriggers
+      lenis.destroy();
+      ScrollTrigger.killAll();
     };
   }, []);
+
+  // Form validation logic
+  const validate = () => {
+    let formErrors = {};
+
+    // Updated name pattern
+    const namePattern = /^[a-zA-Z\s'-]{2,40}$/;
+    if (!formData.fullName.trim() || !namePattern.test(formData.fullName)) {
+      formErrors.fullName =
+        "Full name is required and must only contain letters, spaces, apostrophes, or hyphens.";
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      formErrors.email = "Invalid email format.";
+    }
+
+    const phonePattern =
+      /^\+?(\d{1,3})?[-.\s]?(\(?\d{3}\)?)[-.\s]?(\d{3})[-.\s]?(\d{4})$/;
+    if (
+      formData.phone &&
+      (formData.phone.length !== 10 || !phonePattern.test(formData.phone))
+    ) {
+      formErrors.phone = "Phone number must be 10 digits.";
+    }
+
+    if (!formData.reason) {
+      formErrors.reason = "Please select a reason.";
+    }
+
+    if (!formData.message.trim()) {
+      formErrors.message = "Message cannot be empty.";
+    }
+
+    return formErrors;
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formErrors = validate();
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length === 0) {
+      // Perform the submit action (e.g., API call)
+
+      try {
+        const response = await axios.post(
+          `https://jsonplaceholder.typicode.com/posts`,
+          formData
+        );
+        console.log("Post created:", response.data);
+        setResponse("Form Submitted Successfully");
+      } catch (error) {
+        console.error("Error creating post:", error);
+        setErrors({ message: "Error creating post. Please try again later." });
+      }
+
+      console.log("Form submitted:", formData);
+    }
+  };
+
+  // Update form data on input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   return (
     <>
       <Header />
@@ -86,7 +167,6 @@ const ContactUs = () => {
         <div className="home-container about-container"></div>
 
         <div className="hero-text">
-          {/* <img src={leftCurve} className="left-curve" alt="" /> */}
           <h1>
             MASTERING TECHNOLOGY,
             <br />
@@ -95,6 +175,7 @@ const ContactUs = () => {
           <button className="hero-button">DISCOVER MORE!</button>
         </div>
       </section>
+
       <section className="contact-section">
         <div className="map-box">
           <iframe
@@ -116,24 +197,62 @@ const ContactUs = () => {
           <div className="title">Registration Form</div>
           <hr />
           <div className="content">
-            <form action="#">
+            <form onSubmit={handleSubmit} method="post">
               <div className="user-details">
                 <div className="input-box">
                   <span className="details">Full Name</span>
-                  <input type="text" placeholder="Enter your name" required />
+                  <input
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter your name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.fullName && (
+                    <span className="error">{errors.fullName}</span>
+                  )}
                 </div>
+
                 <div className="input-box">
                   <span className="details">Email</span>
-                  <input type="text" placeholder="Enter your email" required />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  {errors.email && (
+                    <span className="error">{errors.email}</span>
+                  )}
                 </div>
+
                 <div className="input-box">
                   <span className="details">Phone Number</span>
-                  <input type="text" placeholder="Enter your phone number" />
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Enter your phone number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                  {errors.phone && (
+                    <span className="error">{errors.phone}</span>
+                  )}
                 </div>
+
                 <div className="input-box">
                   <span className="details">Company Name</span>
-                  <select id="reason" name="reason" required>
-                    <option value="" disabled selected>
+                  <select
+                    id="reason"
+                    name="reason"
+                    value={formData.reason}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="" disabled>
                       Select a reason
                     </option>
                     <option value="website">Website</option>
@@ -144,18 +263,29 @@ const ContactUs = () => {
                     <option value="feedback">Feedback</option>
                     <option value="general">General Inquiry</option>
                   </select>
+                  {errors.reason && (
+                    <span className="error">{errors.reason}</span>
+                  )}
                 </div>
+
                 <div className="input-box">
-                  <span className="details"> Your Message</span>
+                  <span className="details">Your Message</span>
                   <textarea
                     className="message"
                     placeholder="Your Message"
                     rows="5"
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   ></textarea>
+                  {errors.message && (
+                    <span className="error">{errors.message}</span>
+                  )}
+                  {response && <span className="response">{response}</span>}
                 </div>
               </div>
+
               <div className="button-container">
                 <div className="button">
                   <input type="submit" value="Submit" />

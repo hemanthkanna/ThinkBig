@@ -29,9 +29,11 @@ import showcaseImage3 from "../Assets/showcase-3.jpeg";
 import showcaseImage4 from "../Assets/showcase-4.jpeg";
 import showcaseImage5 from "../Assets/showcase-5.jpeg";
 import showcaseImage6 from "../Assets/showcase-6.jpeg"; // Add more images as needed
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [sliderImages, setSliderImages] = useState("All");
+  const navigate = useNavigate();
 
   // Define different image sets
   const imageSets = {
@@ -205,6 +207,10 @@ const Home = () => {
     };
   }, []);
 
+  const handleNavigation = (path) => {
+    navigate(path); // Programmatically navigate to the specified path
+  };
+
   return (
     <>
       <Header />
@@ -218,7 +224,12 @@ const Home = () => {
             <br />
             SHAPING THE FUTURE.
           </h1>
-          <button className="hero-button">DISCOVER MORE!</button>
+          <button
+            className="hero-button"
+            onClick={() => handleNavigation("/services")}
+          >
+            DISCOVER MORE!
+          </button>
         </div>
       </section>
       <section className="about">
@@ -233,7 +244,10 @@ const Home = () => {
           </p>
         </div>
         <div className="services-cards">
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/websiteDevelopment")}
+          >
             <img src={websiteDevelopment} alt="Website Development" />
             <h2>Website Development</h2>
             <p>
@@ -241,7 +255,10 @@ const Home = () => {
               and digital presence.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/mobileAppDevelopment")}
+          >
             <img src={mobileAppDevelopment} alt="Mobile App Development" />
             <h2>Mobile App Development</h2>
             <p>
@@ -249,7 +266,10 @@ const Home = () => {
               and elevate your brand.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/uiUxDesign")}
+          >
             <img src={uiUxDesign} alt="UI/UX Design" />
             <h2>UI/UX Design</h2>
             <p>
@@ -257,7 +277,10 @@ const Home = () => {
               seamless functionality for an exceptional digital experience.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/sapProjects")}
+          >
             <img src={sapProjects} alt="SAP Projects" />
             <h2>SAP Projects</h2>
             <p>
@@ -265,7 +288,10 @@ const Home = () => {
               and enhance operational efficiency.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/digitalMarketing")}
+          >
             <img src={digitalMarketing} alt="Digital Marketing Services" />
             <h2>Digital Marketing Services</h2>
             <p>
@@ -386,7 +412,12 @@ const Home = () => {
               Shape Tomorrow with Technology at Thinkbig Software Solutions Pvt
               Ltd
             </h3>
-            <button className="discover-button-1">Discover More</button>
+            <button
+              className="discover-button-1"
+              onClick={() => handleNavigation("/services")}
+            >
+              Discover More
+            </button>
           </div>
         </div>
         <div className="banner-text-box  banner-box-2">
@@ -394,7 +425,12 @@ const Home = () => {
             <h3 className="banner-text">
               Advance with Technology and Thinkbig Software Solutions Pvt Ltd
             </h3>
-            <button className="discover-button-2">Discover More</button>
+            <button
+              className="discover-button-2"
+              onClick={() => handleNavigation("/services")}
+            >
+              Discover More
+            </button>
           </div>
         </div>
       </section>

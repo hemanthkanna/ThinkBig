@@ -17,11 +17,13 @@ import implementation from "../Assets/Implementation.png";
 import testingValidation from "../Assets/Testing & Validation.png";
 import deployment from "../Assets/Deployment (1).png";
 import imagesection from "../Assets/Digital.png";
+import { useNavigate } from "react-router-dom";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const WorkFlowDynamics = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -109,6 +111,10 @@ const WorkFlowDynamics = () => {
       ScrollTrigger.killAll(); // Kill all ScrollTriggers
     };
   }, []);
+
+  function handleNavigation(path) {
+    navigate(path);
+  }
   return (
     <>
       <Header />
@@ -217,7 +223,11 @@ const WorkFlowDynamics = () => {
       <section className="call-to-section">
         <div className="call-to-box">
           <h1>Ready to Launch Your Project? Get in touch with us today!</h1>
-          <button className="call-us-button" aria-label="Contact Us">
+          <button
+            className="call-us-button"
+            aria-label="Contact Us"
+            onClick={() => handleNavigation("/contact")}
+          >
             Contact Us
           </button>
         </div>

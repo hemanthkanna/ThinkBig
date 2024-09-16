@@ -489,6 +489,7 @@ li {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   padding: 50px;
+  cursor: pointer;
 }
 
 .card img {
@@ -2029,6 +2030,7 @@ form .input-box span.details {
   font-weight: 500;
   margin-bottom: 5px;
 }
+
 #reason,
 textarea,
 .user-details .input-box input {
@@ -2043,8 +2045,8 @@ textarea,
   transition: all 0.3s ease;
 }
 
-#reason,
-textarea,
+#reason:focus,
+textarea:focus,
 .user-details .input-box input:focus,
 .user-details .input-box input:valid {
   border-color: #ffaa17;
@@ -2093,6 +2095,15 @@ form .button input:hover {
   /* transform: scale(0.99); */
   background: linear-gradient(-135deg, #71b7e6, #ffaa17);
 }
+
+.error {
+  color: red;
+}
+
+.response {
+  color: green;
+}
+
 @media (max-width: 584px) {
   .container {
     max-width: 100%;

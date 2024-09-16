@@ -14,8 +14,10 @@ import mobileAppDevelopment from "../Assets/Mobile App Development.png";
 import uiUxDesign from "../Assets/UI_UX Design.png";
 import sapProjects from "../Assets/SAP Projects.png";
 import digitalMarketing from "../Assets/Digital Marketing Services.png";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -105,6 +107,10 @@ const Services = () => {
     };
   }, []);
 
+  const handleNavigation = (path) => {
+    navigate(path); // Programmatically navigate to the specified path
+  };
+
   return (
     <>
       <Header />
@@ -130,7 +136,10 @@ const Services = () => {
           </p>
         </div>
         <div className="services-cards">
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/websiteDevelopment")}
+          >
             <img src={websiteDevelopment} alt="Website Development" />
             <h2>Website Development</h2>
             <p>
@@ -138,7 +147,10 @@ const Services = () => {
               and digital presence.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/mobileAppDevelopment")}
+          >
             <img src={mobileAppDevelopment} alt="Mobile App Development" />
             <h2>Mobile App Development</h2>
             <p>
@@ -146,7 +158,10 @@ const Services = () => {
               and elevate your brand.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/uiUxDesign")}
+          >
             <img src={uiUxDesign} alt="UI/UX Design" />
             <h2>UI/UX Design</h2>
             <p>
@@ -154,7 +169,10 @@ const Services = () => {
               seamless functionality for an exceptional digital experience.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/sapProjects")}
+          >
             <img src={sapProjects} alt="SAP Projects" />
             <h2>SAP Projects</h2>
             <p>
@@ -162,7 +180,10 @@ const Services = () => {
               and enhance operational efficiency.
             </p>
           </div>
-          <div className="card">
+          <div
+            className="card"
+            onClick={() => handleNavigation("/services/digitalMarketing")}
+          >
             <img src={digitalMarketing} alt="Digital Marketing Services" />
             <h2>Digital Marketing Services</h2>
             <p>

@@ -28,7 +28,7 @@ const Footer = () => {
               <Link to="/services">SERVICES </Link>
             </li>
             <li className="workflow-dynamics-link">
-              <Link to="/how-it-works"> WORKFLOW DYNAMICS</Link>
+              <Link to="/workflow-dynamic"> WORKFLOW DYNAMICS</Link>
             </li>
             <li className="contact-link">
               <Link to="/contact">CONTACT</Link>
