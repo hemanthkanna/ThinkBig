@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "ThinkBig backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development && nodemon server.js",
+    "prod": "set NODE_ENV=production && nodemon server.js"
+  },
+  "author": "hemanthkanna",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/msal-node": "^2.13.1",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "nodemailer": "^6.9.15",
+    "nodemon": "^3.1.4"
+  }
+}

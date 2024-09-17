@@ -80,6 +80,9 @@ const Header = () => {
               </span>
               <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                 <li>
+                  <Link to="/services/sapProjects">SAP Projects</Link>
+                </li>
+                <li>
                   <Link to="/services/websiteDevelopment">Web Development</Link>
                 </li>
                 <li>
@@ -89,9 +92,6 @@ const Header = () => {
                 </li>
                 <li>
                   <Link to="/services/uiUxDesign">UI-UX Design</Link>
-                </li>
-                <li>
-                  <Link to="/services/sapProjects">SAP Projects</Link>
                 </li>
                 <li>
                   <Link to="/services/digitalMarketing">

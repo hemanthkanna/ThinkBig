@@ -167,6 +167,9 @@ const ServiceElementComponent = () => {
           <ul>
             {" "}
             <li>
+              <Link to="/services/sapProjects">SAP Projects</Link>
+            </li>
+            <li>
               <Link to="/services/websiteDevelopment">Web Development</Link>
             </li>
             <li>
@@ -176,9 +179,6 @@ const ServiceElementComponent = () => {
             </li>
             <li>
               <Link to="/services/uiUxDesign">UI-UX Design</Link>
-            </li>
-            <li>
-              <Link to="/services/sapProjects">SAP Projects</Link>
             </li>
             <li>
               <Link to="/services/digitalMarketing">

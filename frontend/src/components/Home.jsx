@@ -246,6 +246,17 @@ const Home = () => {
         <div className="services-cards">
           <div
             className="card"
+            onClick={() => handleNavigation("/services/sapProjects")}
+          >
+            <img src={sapProjects} alt="SAP Projects" />
+            <h2>SAP Projects</h2>
+            <p>
+              Implementing robust SAP solutions that optimize business processes
+              and enhance operational efficiency.
+            </p>
+          </div>
+          <div
+            className="card"
             onClick={() => handleNavigation("/services/websiteDevelopment")}
           >
             <img src={websiteDevelopment} alt="Website Development" />
@@ -275,17 +286,6 @@ const Home = () => {
             <p>
               Designing user-centric interfaces that blend aesthetics with
               seamless functionality for an exceptional digital experience.
-            </p>
-          </div>
-          <div
-            className="card"
-            onClick={() => handleNavigation("/services/sapProjects")}
-          >
-            <img src={sapProjects} alt="SAP Projects" />
-            <h2>SAP Projects</h2>
-            <p>
-              Implementing robust SAP solutions that optimize business processes
-              and enhance operational efficiency.
             </p>
           </div>
           <div

@@ -9,6 +9,8 @@ import axios from "axios";
 
 gsap.registerPlugin(ScrollTrigger);
 
+let apiUrl = import.meta.env.VITE_REACT_APP_API_ENDPOINT;
+
 const ContactUs = () => {
   // State for form inputs and validation errors
   const [formData, setFormData] = useState({
@@ -136,12 +138,19 @@ const ContactUs = () => {
       // Perform the submit action (e.g., API call)
 
       try {
-        const response = await axios.post(
-          `https://jsonplaceholder.typicode.com/posts`,
-          formData
-        );
-        console.log("Post created:", response.data);
-        setResponse("Form Submitted Successfully");
+        console.log("APIURL: " + `${apiUrl}/email`);
+        const response = await axios.post(`${apiUrl}/email`, formData, {
+          withCredentials: true,
+        });
+        console.log("Post created:", response);
+        setResponse(response.data.message);
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          reason: "",
+          message: "",
+        });
       } catch (error) {
         console.error("Error creating post:", error);
         setErrors({ message: "Error creating post. Please try again later." });
